@@ -3,149 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>宏觀風險掃描日報 | 2026-08-08</title>
+    <title>宏觀風險日報 | 2026-08-08</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="header-content">
-                <h1>宏觀風險掃描日報 <span>(基礎版)</span></h1>
-                <p id="current-date">掃描日期：2026年08月08日</p>
+            <div class="header-left">
+                <h1><span>PART 01</span> 儀表盤 · 17 項指標</h1>
             </div>
-            <div class="header-actions">
-                <button id="save-btn" class="btn">保存今日報告</button>
+            <div class="header-right">
+                <span class="report-date">掃描日期：2026-08-08</span>
             </div>
         </header>
 
-        <section class="alert-summary">
-            <div class="card summary-card">
-                <h3>🟢 短期信號</h3>
-                <div class="score">4 / 5 <span class="sub-text">未警報</span></div>
-                <p>短期動能仍有支撐</p>
-            </div>
-            <div class="card summary-card">
-                <h3>🟡 中期信號</h3>
-                <div class="score">3 / 7 <span class="sub-text">未警報</span></div>
-                <p>過熱跡象增加</p>
-            </div>
-            <div class="card summary-card">
-                <h3>🔴 長期信號</h3>
-                <div class="score">1 / 5 <span class="sub-text">未警報</span></div>
-                <p>估值與週期處於極端狀態</p>
-            </div>
-        </section>
-
         <section class="dashboard">
-            <h2>全景掃描儀表盤</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>指標</th>
-                            <th>當前值</th>
-                            <th>資料日期</th>
-                            <th>警戒閾值</th>
-                            <th>信號</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="group-header"><td colspan="5">🟢 短期指標（判斷過熱回調）</td></tr>
-                        <tr><td>1. VIX (恐慌指數)</td><td>14.90</td><td>08/07</td><td>> 25 且站穩</td><td><span class="badge safe">🟢 安全</span></td></tr>
-                        <tr><td>2. CNN Fear & Greed</td><td>59.6 (貪婪)</td><td>08/07</td><td>> 75 後跌破 50</td><td><span class="badge safe">🟢 安全</span></td></tr>
-                        <tr><td>3. AAII 多空情緒差</td><td>-1.0% (偏空)</td><td>08/06</td><td>淨多頭 > 30%</td><td><span class="badge safe">🟢 安全</span></td></tr>
-                        <tr><td>4. CBOE Put/Call Ratio</td><td>0.57</td><td>08/06</td><td>< 0.60</td><td><span class="badge alert">🔴 警報</span></td></tr>
-                        <tr><td>5. NAAIM 基金經理曝險</td><td>79.70</td><td>07/29*</td><td>> 100%</td><td><span class="badge safe">🟢 安全</span></td></tr>
-                        
-                        <tr class="group-header"><td colspan="5">🟡 中期指標（判斷趨勢轉折）</td></tr>
-                        <tr><td>6. FINRA Margin Debt</td><td>$1.50兆 (+49.0%年增)</td><td>06月</td><td>年增 > 25%</td><td><span class="badge alert">🔴 警報</span></td></tr>
-                        <tr><td>7. Margin Debt / GDP</td><td>4.63%</td><td>06月</td><td>顯著高於長期均值</td><td><span class="badge alert">🔴 警報</span></td></tr>
-                        <tr><td>8. IPO 發行量 (當季)</td><td>$1048 億 (48家)</td><td>Q2</td><td>融資額極端爆發</td><td><span class="badge alert">🔴 警報</span></td></tr>
-                        <tr><td>9. Insider Buy/Sell</td><td>0.24</td><td>08/01</td><td>< 0.17</td><td><span class="badge safe">🟢 安全</span></td></tr>
-                        <tr><td>10. BofA Bull & Bear</td><td>9.7 (極度樂觀)</td><td>08月</td><td>> 8.0</td><td><span class="badge alert">🔴 警報</span></td></tr>
-                        <tr><td>11. HY OAS Spread</td><td>2.71%</td><td>08/06</td><td>> 4.5%</td><td><span class="badge safe">🟢 安全</span></td></tr>
-                        <tr><td>12. A/D Line (騰落線)</td><td>創新高，無背離</td><td>08月</td><td>指數新高但AD未創</td><td><span class="badge safe">🟢 安全</span></td></tr>
-                        
-                        <tr class="group-header"><td colspan="5">🔴 長期指標（判斷結構性週期頂）</td></tr>
-                        <tr><td>13. Buffett Indicator</td><td>230%+</td><td>08/05</td><td>> 150%</td><td><span class="badge alert">🔴 警報</span></td></tr>
-                        <tr><td>14. Shiller CAPE</td><td>42.12</td><td>08/07</td><td>> 30</td><td><span class="badge alert">🔴 警報</span></td></tr>
-                        <tr><td>15. 10Y-2Y 殖利率曲線</td><td>+0.46% (46 bps)</td><td>08/07</td><td>倒掛解除並陡峭化</td><td><span class="badge alert">🔴 警報</span></td></tr>
-                        <tr><td>16. US LEI (領先指標)</td><td>99.1 (-0.3% 6M)</td><td>06月</td><td>年增率持續大幅轉負</td><td><span class="badge warning">⚠️ 注意</span></td></tr>
-                        <tr><td>17. AAII 股票配置比</td><td>70.38%</td><td>07月</td><td>> 70%</td><td><span class="badge alert">🔴 警報</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="28%">指標</th>
+                        <th width="32%">當前值</th>
+                        <th width="15%">資料日期</th>
+                        <th width="15%">警戒閾值</th>
+                        <th width="10%">信號</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 短期指標 -->
+                    <tr class="section-header">
+                        <td colspan="4">短期指標 &nbsp;&nbsp;<span class="header-sub">天 － 週級別</span></td>
+                        <td class="text-right score-text">4 / 5 未警報</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">VIX 波動率指數</div>
+                            <div class="sub-title">CBOE Volatility Index</div>
+                        </td>
+                        <td>
+                            <span class="main-value">14.90</span> <span class="arrow down">↓↓</span> <span class="prev-value">近期低位</span>
+                        </td>
+                        <td><div class="date">08-07</div></td>
+                        <td><div class="threshold">&gt;25 恐慌 / &lt;13 自滿</div></td>
+                        <td><div class="signal safe"><span class="dot"></span> 正常</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">CNN 恐懼與貪婪指數</div>
+                            <div class="sub-title">Fear & Greed Index</div>
+                        </td>
+                        <td>
+                            <span class="main-value">59.6</span> <span class="arrow up">↑</span> <span class="prev-value">貪婪</span>
+                        </td>
+                        <td><div class="date">08-07</div></td>
+                        <td><div class="threshold">&gt;75 極度貪婪</div></td>
+                        <td><div class="signal safe"><span class="dot"></span> 正常</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">AAII 散戶多空差</div>
+                            <div class="sub-title">Bull-Bear Spread</div>
+                        </td>
+                        <td>
+                            <span class="main-value">-1.0%</span> <span class="prev-value">多 37% / 空 38%</span>
+                        </td>
+                        <td><div class="date">08-06</div></td>
+                        <td><div class="threshold">多空差 &gt; +30</div></td>
+                        <td><div class="signal safe"><span class="dot"></span> 正常</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">CBOE 權益賣權買權比</div>
+                            <div class="sub-title">Equity Put/Call Ratio</div>
+                        </td>
+                        <td>
+                            <span class="main-value highlight-red">0.57</span> <span class="arrow down">↓↓</span> <span class="prev-value">極度樂觀</span>
+                        </td>
+                        <td><div class="date">08-06</div></td>
+                        <td><div class="threshold">&lt;0.60 極度自滿</div></td>
+                        <td><div class="signal alert"><span class="dot"></span> 警報</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">NAAIM 曝險指數</div>
+                            <div class="sub-title">NAAIM Exposure Index</div>
+                        </td>
+                        <td>
+                            <span class="main-value">79.70</span> <span class="arrow down">↓</span> <span class="prev-value">未滿倉</span>
+                        </td>
+                        <td><div class="date">07-29</div></td>
+                        <td><div class="threshold">&gt; 100% 滿倉</div></td>
+                        <td><div class="signal safe"><span class="dot"></span> 正常</div></td>
+                    </tr>
+
+                    <!-- 中期指標 -->
+                    <tr class="section-header">
+                        <td colspan="4">中期指標 &nbsp;&nbsp;<span class="header-sub">週 － 月級別</span></td>
+                        <td class="text-right score-text">3 / 7 未警報</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">FINRA 保證金負債</div>
+                            <div class="sub-title">Margin Debt</div>
+                        </td>
+                        <td>
+                            <span class="main-value highlight-red">1.50兆</span> <span class="arrow up">↑↑</span><br>
+                            <span class="prev-value">年增 +49.0% / 月增 +6.1%</span>
+                        </td>
+                        <td><div class="date">2026-06</div></td>
+                        <td><div class="threshold">年增 &gt; +25%</div></td>
+                        <td><div class="signal alert"><span class="dot"></span> 警報</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">保證金負債 / GDP</div>
+                            <div class="sub-title">Margin Debt to GDP</div>
+                        </td>
+                        <td>
+                            <span class="main-value highlight-red">4.63%</span> <span class="arrow up">↑</span> <span class="prev-value">極度偏高</span>
+                        </td>
+                        <td><div class="date">2026-06</div></td>
+                        <td><div class="threshold">&gt; 3.5% (歷史均值)</div></td>
+                        <td><div class="signal alert"><span class="dot"></span> 警報</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">Renaissance IPO 統計</div>
+                            <div class="sub-title">YTD Deal Count / Proceeds</div>
+                        </td>
+                        <td>
+                            <span class="main-value">48 家</span><br>
+                            <span class="main-value highlight-red">1,048 億</span> <span class="prev-value">巨幅擴張</span>
+                        </td>
+                        <td><div class="date">26-Q2</div></td>
+                        <td><div class="threshold">家數與金額同步狂熱</div></td>
+                        <td><div class="signal alert"><span class="dot"></span> 警報</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">內部人買賣比</div>
+                            <div class="sub-title">Insider Buy/Sell Ratio</div>
+                        </td>
+                        <td>
+                            <span class="main-value">0.24</span> <span class="arrow down">↓</span> <span class="prev-value">低於均值</span>
+                        </td>
+                        <td><div class="date">08-01</div></td>
+                        <td><div class="threshold">&lt; 0.17</div></td>
+                        <td><div class="signal warning"><span class="dot"></span> 注意</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">美銀牛熊指標</div>
+                            <div class="sub-title">BofA Bull & Bear</div>
+                        </td>
+                        <td>
+                            <span class="main-value highlight-red">9.7</span> <span class="arrow up">↑</span> <span class="prev-value">極端擁擠</span>
+                        </td>
+                        <td><div class="date">08月<br><span class="prev-value">滯後轉載</span></div></td>
+                        <td><div class="threshold">&gt; 8.0 賣出</div></td>
+                        <td><div class="signal alert"><span class="dot"></span> 警報</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">高收益債利差</div>
+                            <div class="sub-title">ICE BofA US HY OAS</div>
+                        </td>
+                        <td>
+                            <span class="main-value">2.71%</span> <span class="arrow right">→</span> <span class="prev-value">極端緊繃</span>
+                        </td>
+                        <td><div class="date">08-06</div></td>
+                        <td><div class="threshold">&gt; 4.5%</div></td>
+                        <td><div class="signal safe"><span class="dot"></span> 正常</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">紐交所騰落線</div>
+                            <div class="sub-title">NYSE A/D Line</div>
+                        </td>
+                        <td>
+                            <span class="main-value">無背離</span><br>
+                            <span class="prev-value">57% 跑贏大盤</span>
+                        </td>
+                        <td><div class="date">08月</div></td>
+                        <td><div class="threshold">指數新高 / A/D 不新高</div></td>
+                        <td><div class="signal safe"><span class="dot"></span> 正常</div></td>
+                    </tr>
+
+                    <!-- 長期指標 -->
+                    <tr class="section-header">
+                        <td colspan="4">長期指標 &nbsp;&nbsp;<span class="header-sub">月 － 年級別</span></td>
+                        <td class="text-right score-text">1 / 5 未警報</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">巴菲特指標</div>
+                            <div class="sub-title">Buffett Indicator</div>
+                        </td>
+                        <td>
+                            <span class="main-value highlight-red">230%+</span> <span class="arrow up">↑↑</span> <span class="prev-value">歷史新高</span>
+                        </td>
+                        <td><div class="date">08-05</div></td>
+                        <td><div class="threshold">&gt; 150% 顯著高估</div></td>
+                        <td><div class="signal alert"><span class="dot"></span> 警報</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">席勒本益比</div>
+                            <div class="sub-title">Shiller CAPE PE10</div>
+                        </td>
+                        <td>
+                            <span class="main-value highlight-red">42.12</span> <span class="arrow up">↑</span> <span class="prev-value">逼近網達康泡沫</span>
+                        </td>
+                        <td><div class="date">08-07</div></td>
+                        <td><div class="threshold">&gt; 30</div></td>
+                        <td><div class="signal alert"><span class="dot"></span> 警報</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">10Y-2Y 殖利率曲線</div>
+                            <div class="sub-title">Treasury Yield Curve</div>
+                        </td>
+                        <td>
+                            <span class="main-value highlight-red">+0.46% (46bps)</span> <span class="arrow up">↑↑</span><br>
+                            <span class="prev-value">倒掛解除並陡峭化</span>
+                        </td>
+                        <td><div class="date">08-07</div></td>
+                        <td><div class="threshold">倒掛解除並陡峭化</div></td>
+                        <td><div class="signal alert"><span class="dot"></span> 警報</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">領先經濟指標</div>
+                            <div class="sub-title">US LEI</div>
+                        </td>
+                        <td>
+                            <span class="main-value">99.1</span> <span class="arrow down">↓</span><br>
+                            <span class="prev-value">6M 變化 -0.3%</span>
+                        </td>
+                        <td><div class="date">2026-06</div></td>
+                        <td><div class="threshold">年增率轉負</div></td>
+                        <td><div class="signal warning"><span class="dot"></span> 注意</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="main-title">AAII 股票配置比</div>
+                            <div class="sub-title">Equity Allocation</div>
+                        </td>
+                        <td>
+                            <span class="main-value highlight-red">70.38%</span> <span class="arrow up">↑</span> <span class="prev-value">滿倉狀態</span>
+                        </td>
+                        <td><div class="date">07月</div></td>
+                        <td><div class="threshold">&gt; 70%</div></td>
+                        <td><div class="signal alert"><span class="dot"></span> 警報</div></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
-        <section class="focus-signal">
-            <div class="card highlight-card">
-                <h2>🚨 今日最需關注：美銀牛熊指標 (BofA Bull & Bear) 飆升至 9.7</h2>
-                <p>該指標目前已深陷 >8.0 的絕對「賣出」區間，達到 2021 年底以來的最高水平。這反映出機構端資金在信用市場與股市的追價已經到了極度擁擠的狀態。雖然單一指標不足以構成立刻清倉的理由，但它警告我們：市場的彈簧已經被拉到極限，任何超預期的負面宏觀消息（如通膨反撲或勞動力市場驟冷）都可能引發劇烈的多殺多踩踏。</p>
+        <!-- 觸發與綜合結論 -->
+        <section class="bottom-sections">
+            <div class="summary-conclusion">
+                <h2>綜合結論</h2>
+                <div class="conclusion-item">
+                    <strong>短期（1-3 個月）：</strong> 暫不主動減倉，但建議買入尾部保險 (OTM Put)，因投機情緒濃厚且 Put/Call 極低。
+                </div>
+                <div class="conclusion-item">
+                    <strong>中期（3-12 個月）：</strong> 高槓桿與極端擁擠的 BofA 信號顯示中期見頂風險極高，建議向優質金融與防禦板塊調倉。
+                </div>
+                <div class="conclusion-item">
+                    <strong>長期（1-3 年+）：</strong> 估值指標與滿倉狀態處於歷史極值，強烈建議資產再平衡，減配股票 15-20% 轉至現金或美債。
+                </div>
+            </div>
+
+            <div class="trigger-box">
+                <h2>賣出觸發條件追蹤</h2>
+                <p>今日共有 <strong>2 / 7</strong> 項觸發。未達「分批賣出」閾值 (需 3+ 項)。</p>
+                <div class="trigger-list">
+                    <span>❌ VIX > 25 (14.90)</span>
+                    <span>✅ Margin Debt 年增 > 25% (+49.0%)</span>
+                    <span>❌ HY Spread > 4.5% (2.71%)</span>
+                    <span>❌ F&G 跌回 <50 (59.6)</span>
+                    <span>❌ A/D Line 頂背離 (無)</span>
+                    <span>✅ BofA Bull & Bear > 8.0 (9.7)</span>
+                    <span>❌ Insider Buy/Sell < 0.17 (0.24)</span>
+                </div>
             </div>
         </section>
-
-        <div class="grid-layout">
-            <section class="interpretation">
-                <div class="card">
-                    <h2>短中長期綜合結論</h2>
-                    <div class="conclusion-block">
-                        <h3>🟢 短期（1-3 個月）：暫不主動減倉，建議買入尾部保險</h3>
-                        <p>目前 VIX 極低（14.9），短期動能與市場廣度（A/D Line）都十分強勁，且散戶情緒尚未瘋狂。此時盲目猜頂容易被軋空，但 Put/Call Ratio 過低（0.57）顯示投機氣氛濃烈，建議趁期權便宜時買入少量 3 個月期的 OTM Put 進行對沖。</p>
-                    </div>
-                    <div class="conclusion-block">
-                        <h3>🟡 中期（3-12 個月）：趨勢未破，向防禦與價值調倉</h3>
-                        <p>融資餘額年增達 49%（大於 25% 警報線）與 IPO 狂潮顯示市場處於高槓桿與高流動性吸收狀態。BofA 指標（9.7）強烈暗示中期流動性見頂。建議逐步減配估值透支的科技巨頭，轉向有實質現金流、受惠於殖利率曲線陡峭化的板塊（如金融股）與防禦板塊（如醫療保健）。</p>
-                    </div>
-                    <div class="conclusion-block">
-                        <h3>🔴 長期（1-3 年+）：堅決執行資產再平衡</h3>
-                        <p>估值指標（Buffett 230%、CAPE 42）與美滿倉狀態（AAII 70%）均處於歷史極值，疊加殖利率曲線解除倒掛，長期勝率已極端不對稱。建議將整體股票部位的目標權重下調 15-20%，增加中短天期美債或高流動性現金等價物，耐心等待估值回歸。</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="trigger-tracking">
-                <div class="card">
-                    <h2>賣出觸發狀態追蹤</h2>
-                    <table class="trigger-table">
-                        <thead>
-                            <tr>
-                                <th>觸發條件</th>
-                                <th>今日狀態</th>
-                                <th>達成</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>VIX 突破 > 25</td><td>14.90</td><td>❌</td></tr>
-                            <tr><td>Margin Debt 年增 > 25%</td><td>+49.0%</td><td>✅</td></tr>
-                            <tr><td>HY Spread > 4.5%</td><td>2.71%</td><td>❌</td></tr>
-                            <tr><td>F&G >75 跌回 <50</td><td>59.6</td><td>❌</td></tr>
-                            <tr><td>A/D Line 頂背離</td><td>無背離</td><td>❌</td></tr>
-                            <tr><td>BofA Bull & Bear > 8.0</td><td>9.7</td><td>✅</td></tr>
-                            <tr><td>Insider Buy/Sell < 0.17</td><td>0.24</td><td>❌</td></tr>
-                        </tbody>
-                    </table>
-                    <div class="trigger-summary">
-                        <strong>今日共有 2 / 7 項觸發。</strong>未達到「開始分批賣出」閾值（需同時觸發 3+ 項）。
-                    </div>
-                </div>
-            </section>
-        </div>
 
         <footer>
             <div class="notes">
                 <h3>📌 系統與數據備註</h3>
                 <ul>
                     <li><strong>數據完整度承諾</strong>：絕不憑空捏造 BofA 或 Insider 數據，若遇反爬蟲或媒體未公佈將標示「滯後幾週」。</li>
-                    <li><strong>NAAIM 指標調整</strong>：因 2026-08-01 改為訂閱制，7/29 後的免費資料將滯後 3 個月。未來將更換為 Investors Intelligence 或 SentimenTrader。</li>
+                    <li><strong>NAAIM 指標調整</strong>：因 2026-08-01 改為訂閱制，未來將更換為 Investors Intelligence 或 SentimenTrader。</li>
                     <li><strong>每週一加強掃描</strong>：每週一額外追蹤四大跨資產指標（S&P 500 前瞻本益比、10Y TIPS 實質殖利率、DXY 美元指數、黃金/標普比值）。</li>
-                    <li><strong>每週四深度版</strong>：目前為每日基礎版。每週四晚將發布「深度版」，納入 FRED M2、銀行信貸專員調查 (SLOOS)、芝加哥聯儲 NFCI 等高階指標。</li>
-                    <li><strong>存檔建議</strong>：每天點擊右上角「保存今日報告」，滿一週後可對比各指標的歷史箭頭（↑/↓/→）。</li>
+                    <li><strong>每週四深度版</strong>：每週四晚發布「深度版」，納入 FRED M2、銀行信貸專員調查 (SLOOS)、芝加哥聯儲 NFCI 等高階指標。</li>
                 </ul>
             </div>
             <p class="copyright">© 2026 Macro Risk Scanner | Built by Antigravity</p>
         </footer>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
